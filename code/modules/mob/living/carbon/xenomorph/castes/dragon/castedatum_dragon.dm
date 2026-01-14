@@ -14,16 +14,16 @@
 	melee_damage = 30
 
 	// *** Speed *** //
-	speed = -0.5
+	speed = -0.1
 
 	// *** Plasma *** //
-	plasma_max = 1000
+	plasma_max = 750
 	plasma_gain = 0
 	plasma_regen_limit = 0
 	plasma_icon_state = "armor"
 
 	// *** Health *** //
-	max_health = 730
+	max_health = 680
 
 	// *** Evolution *** //
 	upgrade_threshold = TIER_THREE_THRESHOLD
@@ -41,7 +41,7 @@
 	caste_traits = list(TRAIT_STAGGERIMMUNE, TRAIT_SLOWDOWNIMMUNE, TRAIT_STUNIMMUNE, TRAIT_CAN_TEAR_HOLE, TRAIT_CAN_DISABLE_MINER, TRAIT_NEEDS_SILO_TO_EVOLVE_FROM, TRAIT_NEEDS_SILO_TO_EVOLVE_TO)
 
 	// *** Defense *** //
-	soft_armor = list(MELEE = 75, BULLET = 75, LASER = 75, ENERGY = 75, BOMB = 45, BIO = 75, FIRE = 200, ACID = 75)
+	soft_armor = list(MELEE = 60, BULLET = 60, LASER = 60, ENERGY = 60, BOMB = 45, BIO = 60, FIRE = 200, ACID = 60)
 
 	// *** Sunder *** //
 	sunder_recover = 1
@@ -55,7 +55,6 @@
 		/datum/action/ability/xeno_action/psychic_influence,
 		/datum/action/ability/xeno_action/psychic_radiance,
 		/datum/action/ability/activable/xeno/impregnate,
-		/datum/action/ability/activable/xeno/impregnatequeen,
 		/datum/action/ability/xeno_action/watch_xeno,
 		/datum/action/ability/activable/xeno/psydrain/free,
 		/datum/action/ability/activable/xeno/devour,
@@ -94,7 +93,6 @@
 		/datum/action/ability/xeno_action/psychic_influence,
 		/datum/action/ability/xeno_action/psychic_radiance,
 		/datum/action/ability/activable/xeno/impregnate,
-		/datum/action/ability/activable/xeno/impregnatequeen,
 		/datum/action/ability/xeno_action/watch_xeno,
 		/datum/action/ability/activable/xeno/psydrain/free,
 		/datum/action/ability/activable/xeno/devour,
