@@ -201,7 +201,7 @@
 	xeno_owner.move_resist = MOVE_FORCE_OVERPOWERING
 	xeno_owner.add_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_IMMOBILE), DRAGON_ABILITY_TRAIT)
 	playsound(get_turf(xeno_owner), 'sound/effects/alien/dragon/flying_progress.ogg', 75, TRUE, 9)
-	var/was_successful = do_after(xeno_owner, 8 SECONDS, IGNORE_HELD_ITEM, xeno_owner, BUSY_ICON_DANGER, extra_checks = CALLBACK(src, PROC_REF(can_use_ability), target, FALSE, ABILITY_USE_BUSY))
+	var/was_successful = do_after(xeno_owner, 5 SECONDS, IGNORE_HELD_ITEM, xeno_owner, BUSY_ICON_DANGER, extra_checks = CALLBACK(src, PROC_REF(can_use_ability), target, FALSE, ABILITY_USE_BUSY))
 	xeno_owner.move_resist = initial(xeno_owner.move_resist)
 	xeno_owner.remove_traits(list(TRAIT_HANDS_BLOCKED, TRAIT_IMMOBILE), DRAGON_ABILITY_TRAIT)
 	if(!was_successful)
