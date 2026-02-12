@@ -126,7 +126,7 @@
 	slowdown = 0.2
 	maxcharge = 9000 //3000 = 100 culverin rounds
 	self_recharge = TRUE
-	charge_amount = 100
+	charge_amount = 150
 	charge_delay = 2 SECONDS
 	light_range = 0.1
 	light_power = 0.1
