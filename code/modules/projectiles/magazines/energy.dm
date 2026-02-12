@@ -124,7 +124,7 @@
 	magazine_features_flags = MAGAZINE_REFUND_IN_CHAMBER|MAGAZINE_WORN
 	w_class = WEIGHT_CLASS_HUGE
 	slowdown = 0.2
-	maxcharge = 3000
+	maxcharge = 9000 //3000 = 100 culverin rounds
 	self_recharge = TRUE
 	charge_amount = 100
 	charge_delay = 2 SECONDS
