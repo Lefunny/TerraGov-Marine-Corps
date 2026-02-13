@@ -502,9 +502,9 @@
 	L.adjustStaminaLoss(applied_damage) //If we're under our stamina_loss limit, apply the difference between our limit and current stamina damage or power, whichever's less
 	var/damage_overflow = power - applied_damage
 	if(damage_overflow > 0) //If we exceed maxHealth * 2 stamina damage, apply any excess as toxloss and oxyloss
-		L.adjustToxLoss(damage_overflow)
-		//L.adjustOxyLoss(damage_overflow * 0.5)
-		//L.Losebreath(2) //So the oxy loss actually means something.
+		L.adjustToxLoss(damage_overflow * 0.5)
+		L.adjustOxyLoss(damage_overflow * 0.5)
+		L.Losebreath(2) //So the oxy loss actually means something.
 
 	L.set_timed_status_effect(2 SECONDS, /datum/status_effect/speech/stutter, only_if_higher = TRUE)
 
