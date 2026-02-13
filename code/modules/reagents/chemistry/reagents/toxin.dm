@@ -463,7 +463,7 @@
 	custom_metabolism = REAGENTS_METABOLISM * 2
 	overdose_threshold = 10000 //Overdosing for neuro is what happens when you run out of stamina to avoid its oxy and toxin damage
 	toxpwr = 0
-	var/neuro_stun_cd = 0
+	//var/neuro_stun_cd = 0
 
 /datum/reagent/toxin/xeno_neurotoxin/on_mob_life(mob/living/L, metabolism)
 	var/power = 0
@@ -483,6 +483,9 @@
 			L.jitter(8) //Shows that things are *really* bad
 
 	power *= healthfactor
+	/*
+
+	//Non lethal variant, deals only stamina damage
 	var/stamina_loss_limit = L.maxHealth * 2
 	var/applied_damage = clamp(power, 0, (stamina_loss_limit - L.getStaminaLoss()))
 	var/damage_overflow = power - applied_damage
@@ -491,17 +494,18 @@
 		COOLDOWN_START(src, neuro_stun_cd, 5 MINUTES) //only do the hard stun once every five minutes, unless the reagent is cleared completely
 	else
 		L.adjustStaminaLoss(applied_damage)
-	/*
+	*/
+
 	//Apply stamina damage, then apply any 'excess' stamina damage beyond our maximum as tox and oxy damage
 	var/stamina_loss_limit = L.maxHealth * 2
 	var/applied_damage = clamp(power, 0, (stamina_loss_limit - L.getStaminaLoss()))
 	L.adjustStaminaLoss(applied_damage) //If we're under our stamina_loss limit, apply the difference between our limit and current stamina damage or power, whichever's less
 	var/damage_overflow = power - applied_damage
 	if(damage_overflow > 0) //If we exceed maxHealth * 2 stamina damage, apply any excess as toxloss and oxyloss
-		L.adjustToxLoss(damage_overflow * 0.5)
-		L.adjustOxyLoss(damage_overflow * 0.5)
-		L.Losebreath(2) //So the oxy loss actually means something.
-	*/
+		L.adjustToxLoss(damage_overflow)
+		//L.adjustOxyLoss(damage_overflow * 0.5)
+		//L.Losebreath(2) //So the oxy loss actually means something.
+
 	L.set_timed_status_effect(2 SECONDS, /datum/status_effect/speech/stutter, only_if_higher = TRUE)
 
 	if(L.incapacitated()) //includes paralyzed or nested but not resting
